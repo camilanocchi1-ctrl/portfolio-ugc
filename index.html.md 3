@@ -1,0 +1,876 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Camila Nocchi — UGC Creator</title>  
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">  
+<style>  
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }  
+  
+:root {  
+  --pink-pale:  #F9F0EE;  
+  --pink-mid:   #F0D9D4;  
+  --pink-warm:  #E2B8AF;  
+  --pink-deep:  #C4847A;  
+  --green-pale: #EDF0E8;  
+  --green-mid:  #C8D4C0;  
+  --green-deep: #7A9170;  
+  --brown:      #5C3D35;  
+  --text:       #2E1F1A;  
+  --text-soft:  #7A5C54;  
+  --text-light: #B09890;  
+  --off-white:  #FAF6F3;  
+}  
+  
+html { scroll-behavior: smooth; }  
+  
+body {  
+  background: var(--off-white);  
+  color: var(--text);  
+  font-family: 'DM Sans', sans-serif;  
+  font-weight: 300;  
+  overflow-x: hidden; }  
+  
+/* ─── MARQUEE ─── */  
+.marquee-bar {  
+  background: var(--pink-warm);  
+  overflow: hidden;  
+  white-space: nowrap;  
+  padding: 10px 0;  
+}  
+.marquee-track {  
+  display: inline-block;  
+  animation: marquee 20s linear infinite;  
+}  
+.marquee-track span {  
+  font-size: 11px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  color: var(--brown);  
+  padding: 0 32px;  
+}  
+.marquee-track span::before {  
+  content: '·';  
+  margin-right: 32px;  
+  opacity: 0.5;  
+}  
+@keyframes marquee {  
+  from { transform: translateX(0); }  
+  to   { transform: translateX(-50%); }  
+}  
+  
+/* ─── HERO ─── */  
+.hero {  
+  display: grid;  
+  grid-template-columns: 1fr;  
+  min-height: 100svh;  
+  background: var(--pink-pale);  
+  position: relative;  
+  overflow: hidden;  
+}  
+  
+.hero-bg-circle {  
+  position: absolute;  
+  width: 420px; height: 420px;  
+  border-radius: 50%;  
+  background: var(--pink-mid);  
+  top: -120px; right: -100px;  
+  z-index: 0;  
+}  
+  
+.hero-bg-circle-2 {  
+  position: absolute;  
+  width: 200px; height: 200px;  
+  border-radius: 50%;  
+  background: var(--green-pale);  
+  bottom: 60px; left: -60px;  
+  z-index: 0;  
+}  
+  
+.hero-content {  
+  position: relative;  
+  z-index: 1;  
+  padding: 64px 28px 80px;  
+  display: flex; flex-direction: column;  
+  justify-content: space-between;  
+  min-height: 100svh;  
+}  
+  
+.hero-top {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: flex-start;  
+}  
+  
+.hero-logo {  
+  font-size: 11px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  color: var(--text-soft);  
+}  
+  
+.hero-avail {  
+  display: flex;  
+  align-items: center;  
+  gap: 7px;  
+  font-size: 11px;  
+  color: var(--text-soft);  
+}  
+  
+.avail-dot {  
+  width: 7px; height: 7px;  
+  border-radius: 50%;  
+  background: var(--green-deep);  
+  animation: pulse 2s ease infinite;  
+}  
+  
+@keyframes pulse {  
+  0%, 100% { opacity: 1; transform: scale(1); }  
+  50% { opacity: 0.5; transform: scale(0.8); }  
+}  
+  
+.hero-mid {  
+  margin-top: auto;  
+  padding-top: 48px;  
+}  
+  
+.hero-eyebrow {  
+  font-size: 11px;  
+  letter-spacing: 2px;  
+  text-transform: uppercase;  
+  color: var(--pink-deep);  
+  margin-bottom: 16px;  
+  font-weight: 400;  
+}  
+  
+.hero-name {  
+  font-family: 'Italiana', serif;  
+  font-size: clamp(68px, 20vw, 120px);  
+  line-height: 0.88;  
+  color: var(--text);  
+  letter-spacing: -2px;  
+}  
+  
+.hero-name .last {  
+  display: block;  
+  color: var(--pink-deep);  
+  padding-left: 24px;  
+}  
+  
+.hero-bottom {  
+  margin-top: 48px;  
+  display: flex;  
+  flex-direction: column;  
+  gap: 20px;  
+}  
+  
+.hero-desc {  
+  font-size: 14px;  
+  line-height: 1.75;  
+  color: var(--text-soft);  
+  max-width: 300px;  
+  font-style: italic;  
+}  
+  
+.hero-tags {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 7px;  
+}  
+  
+.hero-tag {  
+  border: 1px solid var(--pink-warm);  
+  border-radius: 100px;  
+  padding: 6px 14px;  
+  font-size: 11px;  
+  color: var(--brown);  
+  background: rgba(255,255,255,0.6);  
+  backdrop-filter: blur(4px);  
+}  
+  
+.hero-scroll {  
+  display: flex;  
+  align-items: center;  
+  gap: 10px;  
+  font-size: 11px;  
+  letter-spacing: 2px;  
+  text-transform: uppercase;  
+  color: var(--text-light);  
+  text-decoration: none;  
+  margin-top: 8px;  
+}  
+  
+.hero-scroll-line {  
+  width: 36px; height: 1px;  
+  background: var(--pink-warm);  
+  transition: width 0.3s;  
+}  
+  
+.hero-scroll:hover .hero-scroll-line { width: 56px; }  
+  
+/* ─── INTRO STRIP ─── */  
+.intro-strip {  
+  background: var(--green-pale);  
+  padding: 40px 28px;  
+}  
+  
+.intro-strip p {  
+  font-family: 'Italiana', serif;  
+  font-size: clamp(22px, 6vw, 36px);  
+  line-height: 1.35;  
+  color: var(--text);  
+  max-width: 520px;  
+}  
+  
+.intro-strip p em {  
+  font-style: italic;  
+  color: var(--green-deep);  
+}  
+  
+/* ─── FORMATOS ─── */  
+.formatos {  
+  padding: 64px 28px;  
+  background: var(--off-white);  
+}  
+.section-eyebrow {  
+  font-size: 10px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  color: var(--text-light);  
+  margin-bottom: 36px;  
+  font-weight: 400;  
+}  
+  
+.formato-list {  
+  display: flex;  
+  flex-direction: column;  
+}  
+  
+.formato-row {  
+  display: flex;  
+  align-items: baseline;  
+  justify-content: space-between;  
+  padding: 20px 0;  
+  border-bottom: 1px solid var(--pink-mid);  
+  gap: 16px;  
+  cursor: default;  
+  transition: padding-left 0.25s;  
+}  
+  
+.formato-row:first-child { border-top: 1px solid var(--pink-mid); }  
+.formato-row:hover { padding-left: 8px; }  
+  
+.formato-num {  
+  font-family: 'Italiana', serif;  
+  font-size: 13px;  
+  color: var(--text-light);  
+  flex-shrink: 0;  
+  width: 28px;  
+}  
+  
+.formato-name {  
+  font-family: 'Italiana', serif;  
+  font-size: clamp(22px, 6vw, 32px);  
+  color: var(--text);  
+  flex: 1;  
+  line-height: 1;  
+}  
+  
+.formato-meta {  
+  text-align: right;  
+  flex-shrink: 0;  
+}  
+  
+.formato-dur {  
+  font-size: 11px;  
+  color: var(--text-light);  
+  display: block;  
+  letter-spacing: 1px;  
+}  
+  
+.formato-desc {  
+  font-size: 11px;  
+  color: var(--text-soft);  
+  display: block;  
+  margin-top: 3px;  
+  font-style: italic;  
+  max-width: 120px;  
+  line-height: 1.4;  
+}  
+  
+/* ─── ABOUT BLOCK ─── */  
+.about-block {  
+  background: var(--pink-pale);  
+  padding: 64px 28px;  
+  display: grid;  
+  gap: 40px;  
+}  
+  
+.about-label {  
+  font-size: 10px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  color: var(--pink-deep);  
+  font-weight: 400;  
+}  
+  
+.about-text {  
+  font-size: 14px;  
+  line-height: 1.9;  
+  color: var(--text-soft);  
+}  
+  
+.about-text strong {  
+  color: var(--text);  
+  font-weight: 400;  
+}  
+  
+.about-nums {  
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr;  
+  gap: 0;  
+  border: 1px solid var(--pink-warm);  
+  border-radius: 12px;  
+  overflow: hidden;  
+}  
+  
+.about-num {  
+  padding: 20px 12px;  
+  text-align: center;  
+  border-right: 1px solid var(--pink-warm);  
+}  
+  
+.about-num:last-child { border-right: none; }  
+  
+.num-val {  
+  font-family: 'Italiana', serif;  
+  font-size: 32px;  
+  color: var(--brown);  
+  display: block;  
+  line-height: 1;  
+}  
+  
+.num-lbl {  
+  font-size: 9px;  
+  letter-spacing: 2px;  
+  text-transform: uppercase;  
+  color: var(--text-light);  
+  margin-top: 6px;  
+  display: block;  
+}  
+  
+/* ─── ENTREGÁVEIS ─── */  
+.entrega {  
+  background: var(--off-white);  
+  padding: 64px 28px;  
+}  
+  
+.entrega-grid {  
+  display: grid;  
+  grid-template-columns: 1fr 1fr;  
+  gap: 0;  
+  border: 1px solid var(--pink-mid);  
+  border-radius: 12px;  
+  overflow: hidden;  
+  margin-top: 36px;  
+}  
+  
+.entrega-item {  
+  padding: 22px 18px;  
+  border-bottom: 1px solid var(--pink-mid);  
+  border-right: 1px solid var(--pink-mid);  
+}  
+  
+.entrega-item:nth-child(even) { border-right: none; }  
+.entrega-item:nth-last-child(-n+2) { border-bottom: none; }  
+  
+.entrega-item h4 {  
+  font-size: 13px;  
+  font-weight: 400;  
+  color: var(--text);  
+  margin-bottom: 5px;  
+}  
+  
+.entrega-item p {  
+  font-size: 11px;  
+  color: var(--text-soft);  
+  line-height: 1.5;  
+  font-style: italic;  
+}  
+  
+/* ─── NICHOS ─── */  
+.nichos {  
+  background: var(--green-pale);  
+  padding: 64px 28px;  
+}  
+  
+.nichos-flow {  
+  display: flex;  
+  flex-wrap: wrap;  
+  gap: 10px;  
+  margin-top: 32px;  
+}  
+  
+.nicho-tag {  
+  border: 1px solid var(--green-mid);  
+  border-radius: 4px;  
+  padding: 9px 16px;  
+  font-size: 12px;  
+  color: var(--brown);  
+  background: rgba(255,255,255,0.5);  
+  transition: background 0.2s, border-color 0.2s;  
+}  
+  
+.nicho-tag:hover {  
+  background: white;  
+  border-color: var(--green-deep);  
+}  
+.nicho-tag.main {  
+  background: white;  
+  border-color: var(--green-deep);  
+  font-weight: 400;  
+}  
+  
+/* ─── MARCAS ─── */  
+.marcas {  
+  background: var(--pink-pale);  
+  padding: 64px 28px;  
+}  
+  
+.marcas-note {  
+  font-size: 11px;  
+  color: var(--text-light);  
+  font-style: italic;  
+  margin-bottom: 28px;  
+  line-height: 1.6;  
+  border-left: 2px solid var(--pink-warm);  
+  padding-left: 14px;  
+}  
+  
+.marcas-list {  
+  display: flex;  
+  flex-direction: column;  
+}  
+  
+.marca-row {  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  padding: 18px 0;  
+  border-bottom: 1px solid var(--pink-mid);  
+  gap: 12px;  
+}  
+  
+.marca-row:first-child { border-top: 1px solid var(--pink-mid); }  
+  
+.marca-name {  
+  font-family: 'Italiana', serif;  
+  font-size: 22px;  
+  color: var(--text);  
+}  
+  
+.marca-cat {  
+  font-size: 10px;  
+  letter-spacing: 2px;  
+  text-transform: uppercase;  
+  color: var(--text-light);  
+}  
+  
+/* ─── PORTFOLIO ─── */  
+.portfolio {  
+  background: var(--off-white);  
+  padding: 64px 28px;  
+}  
+  
+.portfolio-slots {  
+  margin-top: 32px;  
+  display: grid;  
+  grid-template-columns: repeat(3, 1fr);  
+  gap: 12px;  
+}  
+  
+.slot {  
+  aspect-ratio: 9/16;  
+  background: var(--pink-pale);  
+  border: 1px dashed var(--pink-warm);  
+  border-radius: 8px;  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: flex-end;  
+  padding: 14px 10px;  
+  position: relative;  
+  overflow: hidden;  
+}  
+  
+.slot-label {  
+  font-size: 9px;  
+  letter-spacing: 1.5px;  
+  text-transform: uppercase;  
+  color: var(--text-light);  
+  text-align: center;  
+  line-height: 1.5;  
+}  
+  
+.portfolio-note {  
+  margin-top: 20px;  
+  font-size: 12px;  
+  color: var(--text-soft);  
+  font-style: italic;  
+  line-height: 1.7;  
+  text-align: center;  
+}  
+  
+/* ─── CONTATO ─── */  
+.contato {  
+  background: var(--brown);  
+  padding: 72px 28px 80px;  
+}  
+  
+.contato-title {  
+  font-family: 'Italiana', serif;  
+  font-size: clamp(44px, 12vw, 72px);  
+  color: var(--pink-pale);  
+  line-height: 0.95;  
+  letter-spacing: -1px;  
+  margin-bottom: 8px;  
+}  
+  
+.contato-title em {  
+  font-style: italic;  
+  color: var(--pink-warm);  
+  display: block;  
+}  
+  
+.contato-sub {  
+  font-size: 13px;  
+  color: rgba(249,240,238,0.55);  
+  line-height: 1.7;  
+  margin-top: 16px;  
+  margin-bottom: 40px;  
+}  
+  
+.contato-links {  
+  display: flex;  
+  flex-direction: column;  
+  gap: 2px;  
+}  
+  
+.contato-link {  
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
+  padding: 18px 0;  
+  border-bottom: 1px solid rgba(249,240,238,0.12);  
+  text-decoration: none;  
+  transition: opacity 0.2s;  
+}  
+  
+.contato-link:first-child { border-top: 1px solid rgba(249,240,238,0.12); }  
+.contato-link:hover { opacity: 0.7; }  
+  
+.cl-platform {  
+  font-size: 9px;  
+  letter-spacing: 3px;  
+  text-transform: uppercase;  
+  color: var(--pink-warm);  
+  display: block;  
+  margin-bottom: 3px;  
+}  
+  
+.cl-handle {  
+  font-family: 'Italiana', serif;  
+  font-size: 20px;  
+  color: var(--pink-pale);  
+}  
+  
+.cl-arr {  
+  color: var(--pink-warm);  
+  font-size: 18px;  
+  opacity: 0.6;  
+}  
+  
+/* ─── FOOTER ─── */  
+footer {  
+  background: var(--brown);  
+  border-top: 1px solid rgba(249,240,238,0.08);  
+  padding: 18px 28px;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  flex-wrap: wrap;  
+  gap: 8px;  
+}  
+  
+footer p {  
+  font-size: 10px;  
+  letter-spacing: 1.5px;  
+  text-transform: uppercase;  
+  color: rgba(249,240,238,0.2);  
+}  
+</style>  
+</head>  
+<body>  
+  
+<!-- MARQUEE -->  
+<div class="marquee-bar">  
+  <div class="marquee-track">  
+    <span>UGC Creator</span>  
+    <span>Beauty & Skincare</span>  
+    <span>São Paulo</span>  
+    <span>Faceless Content</span>  
+    <span>Meta Ads</span>  
+    <span>TikTok Ads</span>  
+    <span>Make Premium</span>  
+    <span>UGC Creator</span>  
+    <span>Beauty & Skincare</span>  
+    <span>São Paulo</span>  
+    <span>Faceless Content</span>  
+    <span>Meta Ads</span>  
+    <span>TikTok Ads</span>  
+    <span>Make Premium</span>  
+  </div>  
+</div>  
+  
+<!-- HERO -->  
+<div class="hero">  
+  <div class="hero-bg-circle"></div>  
+  <div class="hero-bg-circle-2"></div>  
+  <div class="hero-content">  
+    <div class="hero-top">  
+      <span class="hero-logo">camila.nocchi</span>  
+      <span class="hero-avail">  
+        <span class="avail-dot"></span>  
+        Disponível  
+      </span>  
+    </div>  
+  
+    <div class="hero-mid">  
+      <p class="hero-eyebrow">UGC Creator — Beauty & Skincare</p>  
+      <h1 class="hero-name">  
+        Camila  
+        <span class="last">Nocchi</span>  
+      </h1>  
+    </div>  
+  
+    <div class="hero-bottom">  
+      <p class="hero-desc">Conteúdo autêntico para marcas de beleza que querem parar o scroll e vender de verdade.</p>  
+      <div class="hero-tags">  
+        <span class="hero-tag">Skincare Premium</span>  
+        <span class="hero-tag">Maquiagem</span>  
+        <span class="hero-tag">Faceless UGC</span>  
+        <span class="hero-tag">São Paulo</span>  
+      </div>  
+      <a href="#formatos" class="hero-scroll">  
+        <span class="hero-scroll-line"></span>  
+        Ver mais  
+      </a>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- INTRO STRIP -->  
+<div class="intro-strip">  
+  <p>Crio vídeos que <em>convertem</em> — sem perder a estética. Autenticidade com intenção, do conceito à entrega.</p>  
+</div>  
+  
+<!-- FORMATOS -->  
+<div class="formatos" id="formatos">  
+  <p class="section-eyebrow">O que produzo</p>  
+  <div class="formato-list">  
+    <div class="formato-row">  
+      <span class="formato-num">01</span>  
+      <span class="formato-name">Textura em Close</span>  
+      <div class="formato-meta">  
+        <span class="formato-dur">20s</span>  
+        <span class="formato-desc">Aplicação e absorção em macro</span>  
+      </div>  
+    </div>  
+    <div class="formato-row">  
+      <span class="formato-num">02</span>  
+      <span class="formato-name">Swatching Real</span>  
+      <div class="formato-meta">  
+        <span class="formato-dur">25s</span>  
+        <span class="formato-desc">Cor na pele, sem filtro</span>  
+      </div>  
+    </div>  
+<div class="formato-row">  
+      <span class="formato-num">03</span>  
+      <span class="formato-name">Unboxing Premium</span>  
+      <div class="formato-meta">  
+        <span class="formato-dur">30s</span>  
+        <span class="formato-desc">Abertura sensorial do produto</span>  
+      </div>  
+    </div>  
+    <div class="formato-row">  
+      <span class="formato-num">04</span>  
+      <span class="formato-name">Rotina em Cena</span>  
+      <div class="formato-meta">  
+        <span class="formato-dur">20–30s</span>  
+        <span class="formato-desc">Flat lay animado + aplicação</span>  
+      </div>  
+    </div>  
+    <div class="formato-row">  
+      <span class="formato-num">05</span>  
+      <span class="formato-name">Antes e Depois</span>  
+      <div class="formato-meta">  
+        <span class="formato-dur">15s</span>  
+        <span class="formato-desc">Resultado visual direto</span>  
+      </div>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- ABOUT -->  
+<div class="about-block">  
+  <span class="about-label">Sobre</span>  
+  <p class="about-text">  
+    Especializada em <strong>beauty e skincare premium</strong>, produzo vídeos UGC pensados para performance — Meta Ads, TikTok Ads e canais orgânicos das marcas.<br><br>  
+    Cada entrega chega <strong>pronta para veicular</strong>: sem trabalho extra para o time de marketing, sem perda de identidade da marca.  
+  </p>  
+  <div class="about-nums">  
+    <div class="about-num">  
+      <span class="num-val">5</span>  
+      <span class="num-lbl">Formatos</span>  
+    </div>  
+    <div class="about-num">  
+      <span class="num-val">48h</span>  
+      <span class="num-lbl">Entrega</span>  
+    </div>  
+    <div class="about-num">  
+      <span class="num-val">BR+</span>  
+      <span class="num-lbl">Internacional</span>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- ENTREGÁVEIS -->  
+<div class="entrega">  
+  <p class="section-eyebrow">O que você recebe</p>  
+  <div class="entrega-grid">  
+    <div class="entrega-item">  
+      <h4>Vídeo com legenda</h4>  
+      <p>Editado e pronto para anúncio</p>  
+    </div>  
+    <div class="entrega-item">  
+      <h4>Vídeo limpo</h4>  
+      <p>Sem texto, adaptável a qualquer idioma</p>  
+    </div>  
+    <div class="entrega-item">  
+      <h4>Alta resolução</h4>  
+      <p>4K sem compressão</p>  
+    </div>  
+    <div class="entrega-item">  
+      <h4>Formato 9:16</h4>  
+      <p>Otimizado para TikTok, Reels e Stories</p>  
+    </div>  
+    <div class="entrega-item">  
+      <h4>1 revisão inclusa</h4>  
+      <p>Ajuste de texto, corte ou ritmo</p>  
+    </div>  
+    <div class="entrega-item">  
+      <h4>Direitos de uso</h4>  
+      <p>Irrestrito para anúncios e redes</p>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- NICHOS -->  
+<div class="nichos">  
+  <p class="section-eyebrow">Nichos</p>  
+  <div class="nichos-flow">  
+    <span class="nicho-tag main">Skincare Premium</span>  
+    <span class="nicho-tag main">Maquiagem</span>  
+    <span class="nicho-tag main">Bases & Corretivos</span>  
+    <span class="nicho-tag main">Lábios & Batom</span>  
+    <span class="nicho-tag main">Iluminadores</span>  
+    <span class="nicho-tag">Haircare</span>  
+    <span class="nicho-tag">Protetor Solar</span>  
+    <span class="nicho-tag">Sérum & Ativos</span>  
+    <span class="nicho-tag">Perfumaria</span>  
+    <span class="nicho-tag">Unboxing Luxury</span>  
+  </div>  
+</div>  
+  
+<!-- MARCAS -->  
+<div class="marcas">  
+  <p class="section-eyebrow">Referências de nicho</p>  
+  <p class="marcas-note">Produzo o tipo de conteúdo que marcas como estas usam em seus anúncios — autêntico, esteticamente sofisticado e pensado para converter.</p>  
+  <div class="marcas-list">  
+    <div class="marca-row">  
+      <span class="marca-name">Sallve</span>  
+      <span class="marca-cat">Skincare D2C · rotina, textura, ativo</span>  
+    </div>  
+    <div class="marca-row">  
+      <span class="marca-name">MAC Cosmetics</span>  
+      <span class="marca-cat">Make Premium · tutorial, swatching, pigmentação</span>  
+    </div>  
+    <div class="marca-row">  
+      <span class="marca-name">Charlotte Tilbury</span>  
+      <span class="marca-cat">Luxury Beauty · unboxing, resultado, desejo</span>  
+    </div>  
+    <div class="marca-row">  
+      <span class="marca-name">Rare Beauty</span>  
+      <span class="marca-cat">Make Premium · aplicação, textura, emoção</span>  
+    </div>  
+    <div class="marca-row">  
+      <span class="marca-name">YSL Beauty</span>  
+      <span class="marca-cat">Luxe Makeup · sofisticação, resultado, credibilidade</span>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- PORTFOLIO -->  
+<div class="portfolio">  
+  <p class="section-eyebrow">Portfólio</p>  
+  <div class="portfolio-slots">  
+    <div class="slot" style="border:1.5px solid var(--pink-deep);padding:0;overflow:hidden;border-radius:8px;">  
+      <iframe src="https://www.youtube.com/embed/uzf8infw-2w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;position:absolute;top:0;left:0;"></iframe>  
+    </div>  
+    <div class="slot"><span class="slot-label">Em breve</span></div>  
+    <div class="slot"><span class="slot-label">Em breve</span></div>  
+  </div>  
+  <p class="portfolio-note">Mais vídeos em produção — entre em contato para receber os materiais diretamente.</p>  
+</div>  
+  
+<!-- CONTATO -->  
+<div class="contato" id="contato">  
+  <h2 class="contato-title">  
+    Vamos  
+    <em>criar juntos?</em>  
+  </h2>  
+  <p class="contato-sub">Disponível para projetos pontuais e parcerias recorrentes. Respondo em até 24 horas.</p>  
+  <div class="contato-links">  
+    <a href="https://instagram.com/camila.nocchi" class="contato-link">  
+      <div>  
+        <span class="cl-platform">Instagram</span>  
+        <span class="cl-handle">@camila.nocchi</span>  
+      </div>  
+      <span class="cl-arr">→</span>  
+    </a>  
+    <a href="mailto:camilanocchi1@gmail.com" class="contato-link">  
+      <div>  
+        <span class="cl-platform">E-mail</span>  
+        <span class="cl-handle">camilanocchi<span style="color:var(--pink-warm);font-weight:500;">1</span>@gmail.com</span>  
+      </div>  
+      <span class="cl-arr">→</span>  
+    </a>  
+    <a href="https://wa.me/5511987877710" class="contato-link">  
+      <div>  
+        <span class="cl-platform">WhatsApp</span>  
+        <span class="cl-handle">+55 (11) 9 8787-7710</span>  
+      </div>  
+      <span class="cl-arr">→</span>  
+    </a>  
+  </div>  
+</div>  
+  
+<footer>  
+  <p>Camila Nocchi · UGC Creator</p>  
+  <p>São Paulo · 2026</p>  
+</footer>  
+  
+</body>  
+</html>  
+  

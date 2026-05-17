@@ -3,7 +3,6 @@ const mainVideo = "https://www.youtube.com/embed/eL5HcNq4yTs"
 const secondaryVideos = [
   "https://www.youtube.com/embed/6MNF5-_dC1g",
   "https://www.youtube.com/embed/uzf8infw-2w",
-  "https://www.youtube.com/embed/OXz_QPGgxoI",
   "https://www.youtube.com/embed/o0pmMkx0hNo",
 ]
 
